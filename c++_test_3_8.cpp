@@ -160,3 +160,139 @@ int main()
     system("pause");
     return 0;
 }
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    int n, m;
+    float arr[10][10] = { 0 };
+    cin >> n >> m;
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < m; j++)
+        {
+            cin >> arr[i][j];
+        }
+
+    }
+    cin >> n >> m;
+    cout << arr[n - 1][m - 1];
+    system("pause");
+    return 0;
+}
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    int n, m;
+    float arr[10][10] = { 0 };
+    cin >> n >> m;
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < m; j++)
+        {
+            cin >> arr[i][j];
+            cout << arr[i][j] << " ";
+        }
+        cout << endl;
+
+    }
+    system("pause");
+    return 0;
+}
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    int n, m, x, y;
+    float arr[10][10] = { 0 };
+    int temp = 0;
+    cin >> n >> m;
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < m; j++)
+        {
+            cin >> arr[i][j];
+            if (arr[i][j] > temp)
+            {
+                temp = arr[i][j];
+                x = i + 1;
+                y = j + 1;
+            }
+
+        }
+
+    }
+
+    cout << x << " " << y;
+    system("pause");
+    return 0;
+}
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    int n, m, x, y;
+    int arr1[10][10] = { 0 };
+    int arr2[10][10] = { 0 };
+    int temp = 0;
+    cin >> n >> m;
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < m; j++)
+        {
+            cin >> arr1[i][j];
+        }
+    }
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < m; j++)
+        {
+            cin >> arr2[i][j];
+            if (arr2[i][j] == arr1[i][j])
+            {
+                temp++;
+            }
+        }
+    }
+
+    if (temp == n * m) cout << "Yes";
+    else cout << "No";
+    system("pause");
+    return 0;
+}
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    int n, m, x, y;
+    int arr1[10][10] = { 0 };
+    int temp = 0;
+    cin >> n;
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < n; j++)
+        {
+            cin >> arr1[i][j];
+        }
+    }
+
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < i; j++)
+        {
+            if (arr1[i][j] == 0)temp++;
+        }
+    }
+
+    if (temp == (n - 1) * n / 2) cout << "YES";
+    else cout << "NO";
+
+    system("pause");
+    return 0;
+}
