@@ -284,74 +284,225 @@ int main()
 }*/
 
 
+//using namespace std;
+//#include <stdio.h>
+//int main()
+//{
+//
+//    //     int n;
+//    //     int i, j;
+//    //     int count = 0;
+//
+//    //     scanf("%d", &n);
+//    //     int arr[n];
+//
+//        //Ì«¹ý¸´ÔÓ
+//    //     for (i = 0; i < n; i++)
+//    //     {
+//    //         scanf("%d", &arr[i]);
+//    //     }
+//
+//    //     for (i = 0; i < n - count; i++)
+//    //     {
+//    //         for (j = i + 1; j < n - i - count; j++)
+//    //         {
+//    //             if (arr[i] == arr[j])
+//    //             {
+//    //                 for (int k = j; k < n - count - 1; k++)
+//    //                 {
+//    //                     arr[k] = arr[k + 1];
+//    //                 }
+//    //                 count++;
+//    //             }
+//    //         }
+//    //     }
+//    //     n = n - count;
+//    //     for (i = 0; i < n - 1; i++)
+//    //     {
+//    //         for (j = 0; j < n - i - 1; j++)
+//    //         {
+//    //             if (arr[j] > arr[j + 1])
+//    //             {
+//    //                 int temp = arr[j];
+//    //                 arr[j] = arr[j + 1];
+//    //                 arr[j + 1] = temp;
+//    //             }
+//    //         }
+//    //     }
+//
+//    //     for (i = 0; i < n; i++)
+//    //     {
+//    //         printf("%d ", arr[i]);
+//    //     }
+//    int n;
+//    scanf("%d", &n);
+//    int a[10000], k;
+//
+//    for (int i = 0; i < n; i++) {
+//        a[i] = 0;
+//    }
+//
+//    for (int i = 0; i < n; i++) {
+//        scanf("%d", &k);
+//        a[k - 1] = k;
+//    }
+//
+//
+//    for (int i = 0; i < n; i++) {
+//        if (a[i] != 0)
+//            printf("%d ", a[i]);
+//    }
+//
+//    return 0;
+//}
+//
+//using namespace std;
+//#include <stdio.h>
+//#include <string.h>
+//int main()
+//{
+//    char arr[8000] = { 0 };
+//    int sum = 0;
+//    const char* p2 = "CHN";
+//    scanf("%s", arr);
+//
+//    for (int i = 0; i < strlen(arr); i++)
+//    {
+//        if (arr[i] == *p2)
+//        {
+//            for (int j = 1; j <3; j++)
+//            {
+//                if (arr[i+j]!=*(p2+j))
+//                {
+//                    break;
+//                }
+//                if(j==2)
+//                {
+//                    sum++;
+//                }
+//            }
+//        }
+//    }
+//    printf("%d", sum);
+//    
+//
+//   // printf("%s", arr);
+//
+// /*   for (int i = 0; i < strlen(arr); i++)
+//    {
+//        if()
+//    }*/
+//
+//    return 0;
+//}
+//
+
 using namespace std;
 #include <stdio.h>
+#include <string.h>
 int main()
 {
+    char arr[8000] = { 0 };
+    int sum = 0;
+    const char* p2 = "CHN";
+    scanf("%s", arr);
+    int length = strlen(arr);
+    for (int i = 0; i < length; i++)
+    {
+        if (arr[i] == 'C')
+        {
+            for (int j = i + 1; j < length; j++)
+            {
+                if (arr[j] == 'H')
+                {
+                    for (int k = j + 1; k < length; k++)
+                    {
+                        if (arr[k] == 'N')sum++;
+                    }
+                }
+            }
+        }
+    }
 
-    //     int n;
-    //     int i, j;
-    //     int count = 0;
-
-    //     scanf("%d", &n);
-    //     int arr[n];
-
-        //Ì«¹ý¸´ÔÓ
-    //     for (i = 0; i < n; i++)
+    //     for (int i = 0; i < strlen(arr); i++)
     //     {
-    //         scanf("%d", &arr[i]);
-    //     }
-
-    //     for (i = 0; i < n - count; i++)
-    //     {
-    //         for (j = i + 1; j < n - i - count; j++)
+    //         if (arr[i] == *p2)
     //         {
-    //             if (arr[i] == arr[j])
+    //             for (int j = 1; j <3; j++)
     //             {
-    //                 for (int k = j; k < n - count - 1; k++)
+    //                 if (arr[i+j]!=*(p2+j))
     //                 {
-    //                     arr[k] = arr[k + 1];
+    //                     break;
     //                 }
-    //                 count++;
+    //                 if(j==2)
+    //                 {
+    //                     sum++;
+    //                 }
     //             }
     //         }
     //     }
-    //     n = n - count;
-    //     for (i = 0; i < n - 1; i++)
+    printf("%d", sum);
+
+
+    return 0;
+}
+
+
+using namespace std;
+#include <stdio.h>
+#include <string.h>
+int main()
+{
+    char arr[8000] = { 0 };
+    long  sum = 0;
+    long  x = 0;
+    long  y = 0;
+    const char* p2 = "CHN";
+    scanf("%s", arr);
+    int length = strlen(arr);
+
+    for (int i = 0; i < length; i++)
+    {
+        if (arr[i] == 'C')x++;
+        else if (arr[i] == 'H')y += x;
+        else if (arr[i] == 'N')sum += y;
+    }
+    //     for(int i =0;i<length;i++)
     //     {
-    //         for (j = 0; j < n - i - 1; j++)
+    //         if(arr[i]=='C')
     //         {
-    //             if (arr[j] > arr[j + 1])
+    //             for(int j=i+1;j<length;j++)
+    //              {
+    //                  if(arr[j]=='H')
+    //                  {
+    //                      for(int k=j+1;k<length;k++)
+    //                      {
+    //                          if(arr[k]=='N')sum++;
+    //                      }
+    //                  }
+    //              }
+    //          }
+    //     }
+
+    //     for (int i = 0; i < strlen(arr); i++)
+    //     {
+    //         if (arr[i] == *p2)
+    //         {
+    //             for (int j = 1; j <3; j++)
     //             {
-    //                 int temp = arr[j];
-    //                 arr[j] = arr[j + 1];
-    //                 arr[j + 1] = temp;
+    //                 if (arr[i+j]!=*(p2+j))
+    //                 {
+    //                     break;
+    //                 }
+    //                 if(j==2)
+    //                 {
+    //                     sum++;
+    //                 }
     //             }
     //         }
     //     }
+    printf("%ld", sum);
 
-    //     for (i = 0; i < n; i++)
-    //     {
-    //         printf("%d ", arr[i]);
-    //     }
-    int n;
-    scanf("%d", &n);
-    int a[10000], k;
-
-    for (int i = 0; i < n; i++) {
-        a[i] = 0;
-    }
-
-    for (int i = 0; i < n; i++) {
-        scanf("%d", &k);
-        a[k - 1] = k;
-    }
-
-
-    for (int i = 0; i < n; i++) {
-        if (a[i] != 0)
-            printf("%d ", a[i]);
-    }
 
     return 0;
 }
