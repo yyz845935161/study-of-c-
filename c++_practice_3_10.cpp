@@ -1,4 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS 1
+#include<iostream>
+#include<string>
+using namespace std;
 //#include <iostream>
 //#include <stdio.h>
 //using namespace std;
@@ -397,32 +400,32 @@ int main()
 //}
 //
 
-using namespace std;
-#include <stdio.h>
-#include <string.h>
-int main()
-{
-    char arr[8000] = { 0 };
-    int sum = 0;
-    const char* p2 = "CHN";
-    scanf("%s", arr);
-    int length = strlen(arr);
-    for (int i = 0; i < length; i++)
-    {
-        if (arr[i] == 'C')
-        {
-            for (int j = i + 1; j < length; j++)
-            {
-                if (arr[j] == 'H')
-                {
-                    for (int k = j + 1; k < length; k++)
-                    {
-                        if (arr[k] == 'N')sum++;
-                    }
-                }
-            }
-        }
-    }
+//using namespace std;
+//#include <stdio.h>
+//#include <string.h>
+//int main()
+//{
+//    char arr[8000] = { 0 };
+//    int sum = 0;
+//    const char* p2 = "CHN";
+//    scanf("%s", arr);
+//    int length = strlen(arr);
+//    for (int i = 0; i < length; i++)
+//    {
+//        if (arr[i] == 'C')
+//        {
+//            for (int j = i + 1; j < length; j++)
+//            {
+//                if (arr[j] == 'H')
+//                {
+//                    for (int k = j + 1; k < length; k++)
+//                    {
+//                        if (arr[k] == 'N')sum++;
+//                    }
+//                }
+//            }
+//        }
+//    }
 
     //     for (int i = 0; i < strlen(arr); i++)
     //     {
@@ -441,35 +444,97 @@ int main()
     //             }
     //         }
     //     }
-    printf("%d", sum);
+//    printf("%d", sum);
+//
+//
+//    return 0;
+//}
+//
+//
+//using namespace std;
+//#include <stdio.h>
+//#include <string.h>
+//int main()
+//{
+//    char arr[8000] = { 0 };
+//    long  sum = 0;
+//    long  x = 0;
+//    long  y = 0;
+//    const char* p2 = "CHN";
+//    scanf("%s", arr);
+//    int length = strlen(arr);
+//
+//    for (int i = 0; i < length; i++)
+//    {
+//        if (arr[i] == 'C')x++;
+//        else if (arr[i] == 'H')y += x;
+//        else if (arr[i] == 'N')sum += y;
+//    }
+//
+//    printf("%ld", sum);
+//
+//
+//    return 0;
+//}
 
-
-    return 0;
-}
-
-
-using namespace std;
-#include <stdio.h>
-#include <string.h>
-int main()
+class Building;
+class GoodGay
 {
-    char arr[8000] = { 0 };
-    long  sum = 0;
-    long  x = 0;
-    long  y = 0;
-    const char* p2 = "CHN";
-    scanf("%s", arr);
-    int length = strlen(arr);
+public:
+    GoodGay();
+    void visit();  //让visit可以访问Building中的私有成员 
+    void visit2();	// 让visit2不可以访问Building中的私有成员 
+    Building* building;
+};
 
-    for (int i = 0; i < length; i++)
+    class Building
     {
-        if (arr[i] == 'C')x++;
-        else if (arr[i] == 'H')y += x;
-        else if (arr[i] == 'N')sum += y;
+        friend void GoodGay::visit();
+    public:
+        Building();
+        string SittingRoom;
+    private:
+        string BedRoom;
+    };
+
+    //类外写成员函数
+    Building::Building()
+    {
+        SittingRoom = "客厅";
+        BedRoom = "卧室";
+    };
+
+
+
+    //类外实现
+    GoodGay::GoodGay()
+    {
+        //创建建筑物的对象
+        building = new Building;   //堆区开辟一块空间 ，初始化指针
     }
 
-    printf("%ld", sum);
+    void GoodGay::visit()
+    {
+        cout << "visit函数正在访问" << building->SittingRoom << endl;
+        cout << "visit函数正在访问" << building->BedRoom << endl;
 
+    }
 
-    return 0;
-}
+    void GoodGay::visit2()
+    {
+        cout << "visit2函数正在访问" << building->SittingRoom << endl;
+        //	cout << "visit2函数正在访问" << building->BedRoom << endl;
+
+    }
+    void test()
+    {
+        GoodGay gg;
+        gg.visit();
+
+    }
+    int main()
+    {
+        test();
+        system("pause");
+        return 0;
+    }
