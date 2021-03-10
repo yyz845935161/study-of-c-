@@ -143,48 +143,48 @@
 //}
 //
 
-using namespace std;
-#include <stdio.h>
-int main()
-{
-
-    int l;
-    int h;
-    int m;
-    scanf("%d:%d %d", &h, &m, &l);
-    m = (m + l % 60);
-    h = (h + l / 60);
-    h = (m >= 60 ? h + 1 : h);
-    printf("%02d:%02d", h % 24, m % 60);
-
-
-
-
-    return 0;
-}
-
-
-using namespace std;
-#include <stdio.h>
-int main()
-{
-
-    int n;
-    scanf("%d", &n);
-    printf("%d", (n / 12) * 4 + 2);
-
-
-
-
-
-    return 0;
-}
-
-
-using namespace std;
-#include <stdio.h>
-int main()
-{
+//using namespace std;
+//#include <stdio.h>
+//int main()
+//{
+//
+//    int l;
+//    int h;
+//    int m;
+//    scanf("%d:%d %d", &h, &m, &l);
+//    m = (m + l % 60);
+//    h = (h + l / 60);
+//    h = (m >= 60 ? h + 1 : h);
+//    printf("%02d:%02d", h % 24, m % 60);
+//
+//
+//
+//
+//    return 0;
+//}
+//
+//
+//using namespace std;
+//#include <stdio.h>
+//int main()
+//{
+//
+//    int n;
+//    scanf("%d", &n);
+//    printf("%d", (n / 12) * 4 + 2);
+//
+//
+//
+//
+//
+//    return 0;
+//}
+//
+//
+//using namespace std;
+//#include <stdio.h>
+//int main()
+//{
 
     //     long long  n,m;
     //     long long  temp,min,max;
@@ -203,7 +203,7 @@ int main()
     //     printf("%ld",com_max+com_min);
 
 
-    long n, m, temp = 1;
+ /*   long n, m, temp = 1;
     long max, min, com_max, com_min;
     scanf("%ld %ld", &n, &m);
     max = n > m ? n : m;
@@ -229,6 +229,129 @@ int main()
     com_max = (n * m) / com_min;
     printf("%ld", com_max + com_min);
 
+
+    return 0;
+}
+
+
+using namespace std;
+#include <stdio.h>
+int main()
+{
+
+    int n;
+    int i = 1;
+    int sum = 0;
+    scanf("%d", &n);
+    while (n)
+    {
+        if (n % 10 % 2 == 1)
+        {
+            sum += (i * 1);
+        }
+        i *= 10;
+        n = n / 10;
+    }
+    printf("%d", sum);
+
+
+    return 0;
+}
+
+
+using namespace std;
+#include <stdio.h>
+int main()
+{
+
+    int n;
+    int i;
+    int sum = 0;
+    int arr[30];
+    arr[0] = 1;
+    arr[1] = 2;
+    scanf("%d", &n);
+    for (i = 2; i < n; i++)
+    {
+        arr[i] = arr[i - 1] + arr[i - 2];
+    }
+
+
+    printf("%d", arr[i - 1]);
+
+
+    return 0;
+}*/
+
+
+using namespace std;
+#include <stdio.h>
+int main()
+{
+
+    //     int n;
+    //     int i, j;
+    //     int count = 0;
+
+    //     scanf("%d", &n);
+    //     int arr[n];
+
+        //Ì«¹ý¸´ÔÓ
+    //     for (i = 0; i < n; i++)
+    //     {
+    //         scanf("%d", &arr[i]);
+    //     }
+
+    //     for (i = 0; i < n - count; i++)
+    //     {
+    //         for (j = i + 1; j < n - i - count; j++)
+    //         {
+    //             if (arr[i] == arr[j])
+    //             {
+    //                 for (int k = j; k < n - count - 1; k++)
+    //                 {
+    //                     arr[k] = arr[k + 1];
+    //                 }
+    //                 count++;
+    //             }
+    //         }
+    //     }
+    //     n = n - count;
+    //     for (i = 0; i < n - 1; i++)
+    //     {
+    //         for (j = 0; j < n - i - 1; j++)
+    //         {
+    //             if (arr[j] > arr[j + 1])
+    //             {
+    //                 int temp = arr[j];
+    //                 arr[j] = arr[j + 1];
+    //                 arr[j + 1] = temp;
+    //             }
+    //         }
+    //     }
+
+    //     for (i = 0; i < n; i++)
+    //     {
+    //         printf("%d ", arr[i]);
+    //     }
+    int n;
+    scanf("%d", &n);
+    int a[10000], k;
+
+    for (int i = 0; i < n; i++) {
+        a[i] = 0;
+    }
+
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &k);
+        a[k - 1] = k;
+    }
+
+
+    for (int i = 0; i < n; i++) {
+        if (a[i] != 0)
+            printf("%d ", a[i]);
+    }
 
     return 0;
 }
