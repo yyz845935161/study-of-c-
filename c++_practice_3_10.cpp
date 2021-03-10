@@ -467,40 +467,7 @@ int main()
         else if (arr[i] == 'H')y += x;
         else if (arr[i] == 'N')sum += y;
     }
-    //     for(int i =0;i<length;i++)
-    //     {
-    //         if(arr[i]=='C')
-    //         {
-    //             for(int j=i+1;j<length;j++)
-    //              {
-    //                  if(arr[j]=='H')
-    //                  {
-    //                      for(int k=j+1;k<length;k++)
-    //                      {
-    //                          if(arr[k]=='N')sum++;
-    //                      }
-    //                  }
-    //              }
-    //          }
-    //     }
 
-    //     for (int i = 0; i < strlen(arr); i++)
-    //     {
-    //         if (arr[i] == *p2)
-    //         {
-    //             for (int j = 1; j <3; j++)
-    //             {
-    //                 if (arr[i+j]!=*(p2+j))
-    //                 {
-    //                     break;
-    //                 }
-    //                 if(j==2)
-    //                 {
-    //                     sum++;
-    //                 }
-    //             }
-    //         }
-    //     }
     printf("%ld", sum);
 
 
