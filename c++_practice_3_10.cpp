@@ -1,4 +1,4 @@
-//#define _CRT_SECURE_NO_WARNINGS 1
+#define _CRT_SECURE_NO_WARNINGS 1
 //#include <iostream>
 //#include <stdio.h>
 //using namespace std;
@@ -120,24 +120,115 @@
 //    system("pause");
 //    return 0;
 //}
-
-#define _CRT_SECURE_NO_WARNINGS 1
-#include <iostream>
+//
+//#define _CRT_SECURE_NO_WARNINGS 1
+//#include <iostream>
+//
+//using namespace std;
+//int main()
+//{
+//
+//    int n;
+//    long long  sum = 0;
+//    cin >> n;
+//    while (n)
+//    {
+//        sum += n;
+//        n--;
+//    }
+//    cout << sum;
+//
+//    system("pause");
+//    return 0;
+//}
+//
 
 using namespace std;
+#include <stdio.h>
+int main()
+{
+
+    int l;
+    int h;
+    int m;
+    scanf("%d:%d %d", &h, &m, &l);
+    m = (m + l % 60);
+    h = (h + l / 60);
+    h = (m >= 60 ? h + 1 : h);
+    printf("%02d:%02d", h % 24, m % 60);
+
+
+
+
+    return 0;
+}
+
+
+using namespace std;
+#include <stdio.h>
 int main()
 {
 
     int n;
-    int sum = 0;
-    cin >> n;
-    while (n)
-    {
-        sum += n;
-        n--;
-    }
-    cout << sum;
+    scanf("%d", &n);
+    printf("%d", (n / 12) * 4 + 2);
 
-    system("pause");
+
+
+
+
+    return 0;
+}
+
+
+using namespace std;
+#include <stdio.h>
+int main()
+{
+
+    //     long long  n,m;
+    //     long long  temp,min,max;
+    //     long long  com_max,com_min;
+    //     scanf("%ld %ld",&n,&m);
+    //     max = n>m ? n:m;
+    //     min = n<m ? n:m;
+    //     while(min)
+    //     {
+    //         temp = max%min;
+    //         max = min;
+    //         min = temp;
+    //     }
+    //     com_min = max;
+    //     com_max = (n*m)/com_min;
+    //     printf("%ld",com_max+com_min);
+
+
+    long n, m, temp = 1;
+    long max, min, com_max, com_min;
+    scanf("%ld %ld", &n, &m);
+    max = n > m ? n : m;
+    min = n < m ? n : m;
+    while (temp)
+    {
+        temp = max - min;
+        if (temp > min)
+        {
+            max = temp;
+        }
+        else
+        {
+
+            max = min;
+            min = temp;
+        }
+
+
+    }
+
+    com_min = max;
+    com_max = (n * m) / com_min;
+    printf("%ld", com_max + com_min);
+
+
     return 0;
 }
