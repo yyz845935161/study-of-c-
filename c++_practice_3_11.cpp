@@ -154,48 +154,90 @@ typedef struct LinkNode
 
 
 
+//int main()
+//{
+//    int n = 0;
+//    int sum = 0;
+//    scanf("%d", &n);
+//    LNode* Tail = NULL;
+//    //头指针
+//    LNode* Head = (LinkList)malloc(sizeof(LNode));
+//    Head->next = NULL;
+//    Tail = Head;
+//
+//    //初始化链表
+//    for (int i = 0; i < n; i++)
+//    {
+//        Tail->next = (LNode*)malloc(sizeof(LNode));
+//        Tail = Tail->next;
+//        scanf("%d", &Tail->data);
+//        Tail->next = NULL;
+//        sum++;
+//    }
+//
+//    //删除
+//    int del;
+//    scanf("%d", &del);
+//    LNode* temp = Head;
+//    while (temp->next)
+//    {
+//        if (temp->next->data == del)
+//        {
+//            LNode* p = temp->next;
+//            temp->next = temp->next->next;
+//
+//            free(p);
+//            sum--;
+//        }
+//        else temp = temp->next;
+//    }
+//
+//
+//    printf("%d\n", sum);
+//    //打印
+//    temp = Head->next;
+//    while (temp)
+//    {
+//        printf("%d ", temp->data);
+//        temp = temp->next;
+//    }
+//
+//}
+
 int main()
 {
-    int n = 0;
-    scanf("%d", &n);
-    LNode* Tail = NULL;
-    //头指针
-    LNode* Head = (LinkList)malloc(sizeof(LNode));
-    Head->next = NULL;
-    Tail = Head;
-
-    //初始化链表
-    for (int i = 0; i < n; i++)
+    LNode* p = NULL;
+    while (p)
     {
-        Tail->next = (LNode*)malloc(sizeof(LNode));
-        Tail = Tail->next;
-        scanf("%d", &Tail->data);
-        Tail->next = NULL;
+        printf("这是空指针的next");
+    }
+    return 0;
+}
+
+
+#include <stdio.h>
+
+class TDate
+{
+public:
+    int Year;
+    int Month;
+    int Day;
+
+    TDate(int x = 0, int y = 0, int z = 0)
+    {
+        Year = x;
+        Month = y;
+        Day = z;
     }
 
-    //删除
-    int del;
-    scanf("%d", &del);
-    LNode* temp = Head;
-    while (temp->next)
-    {
-        if (temp->next->data == del)
-        {
-            LNode* p = temp->next;
-            temp->next = temp->next->next;
-            
-            free(p);
-        }
-        else temp = temp->next;
-    }
+};
 
-
-    //打印
-    temp = Head->next;
-    while (temp)
-    {
-        printf("%d ", temp->data);
-        temp = temp->next;
-    }
-
+int main()
+{
+    int x, y, z;
+    scanf("%d %d %d", &x, &y, &z);
+    TDate test(x, y, z);
+    printf("%d/%d/%d", test.Day, test.Month, test.Year);
+    return 0;
 }
