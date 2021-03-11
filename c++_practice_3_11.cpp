@@ -233,11 +233,83 @@ public:
 
 };
 
+//int main()
+//{
+//    int x, y, z;
+//    scanf("%d %d %d", &x, &y, &z);
+//    TDate test(x, y, z);
+//    printf("%d/%d/%d", test.Day, test.Month, test.Year);
+//    return 0;
+//}
+
+#include <stdio.h>
+#define pai 3.14
+class shape
+{
+public:
+    virtual double GetArea() = 0;
+
+private:
+    int x;
+    int y;
+
+};
+
+class Rectangle :public shape
+{
+public:
+    int x;//³¤
+    int y;//¿í
+    virtual double GetArea()
+    {
+        return x * y;
+    }
+
+};
+
+class Square :public Rectangle
+{
+public:
+    int a;
+    double GetArea()
+    {
+        return a * a;
+    }
+
+};
+
+class Circle :public shape
+{
+public:
+    int r;
+    double GetArea()
+    {
+        return pai * r * r;
+    }
+
+};
+
+void test()
+{
+    int x, y, a, r;
+    Rectangle rect;
+    Square squ;
+    Circle cir;
+    scanf("%d %d", &rect.x, &rect.y);
+    //rect.x=x;
+    //rect.y=y;
+    scanf("%d", &cir.r);
+    //cir.r=r;
+    scanf("%d", &squ.a);
+    printf("%.0lf\n", rect.GetArea());
+    printf("%g\n", cir.GetArea());
+    printf("%.0lf\n", squ.GetArea());
+}
+
+
 int main()
 {
-    int x, y, z;
-    scanf("%d %d %d", &x, &y, &z);
-    TDate test(x, y, z);
-    printf("%d/%d/%d", test.Day, test.Month, test.Year);
+
+    test();
     return 0;
 }
