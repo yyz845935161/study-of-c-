@@ -16,7 +16,8 @@ typedef struct  SeqList
 
 //输出
 void SeqListPrint(SL* ps);
-
+//判断是否满元素
+void Is_Full(SL* ps);
 
 //初始化
 void SeqListInit(SL *ps);
