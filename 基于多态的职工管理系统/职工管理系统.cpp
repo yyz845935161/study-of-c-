@@ -24,8 +24,10 @@ int test01()
 			break;
 
 		case 1: //添加职工
+			wm.add_Emp();
 			break;
 		case 2: //显示职工
+			
 			break;
 		case 3: //删除职工
 			break;
@@ -64,7 +66,8 @@ void test02()
 }
 int main()
 {
-	test02();
+	test01();
+	//test02();
 	system("pause");
 	return 0;
 }
