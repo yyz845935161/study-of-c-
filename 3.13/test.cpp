@@ -52,8 +52,8 @@ void testHeadPop()
 int main()
 {
 	testHeadPop();
-	//testSL();
-	//testHead();
+	testSL();
+	testHeadpush();
 
 	return 0;
 }
