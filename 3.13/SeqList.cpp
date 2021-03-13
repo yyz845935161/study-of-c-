@@ -54,7 +54,7 @@ void SeqListPushBack(struct  SeqList* ps, SLDataType x)
 	
 	ps->a[ps->size] = x;
 	ps->size++;
-	printf("尾插 后的序列是");
+	printf("尾插%d后的序列是",x);
 	SeqListPrint(ps);
 
 };
@@ -93,7 +93,7 @@ void SeqListPushFront(struct  SeqList* ps, SLDataType x)
 	}
 	ps->a[0] = x;
 	ps->size++;
-	printf("头插 后的序列是");
+	printf("头插%d后的序列是",x);
 	SeqListPrint(ps);
 }
 
@@ -112,7 +112,7 @@ void SeqListPopFront(struct  SeqList* ps)
 //任意位置的插入删除   position 位置
 
 //任意位置插入
-void SeqListInsert(struct  SeqList* ps, int pos)
+void SeqListInsert(struct  SeqList* ps, int pos, SLDataType x)
 {
 	assert(ps);
 	Is_Full(ps);
@@ -120,8 +120,9 @@ void SeqListInsert(struct  SeqList* ps, int pos)
 	{
 		ps->a[i] = ps->a[i-1];
 	}
+	ps->a[pos] = x;
 	ps->size++;
-	printf("在第%d个位置插入后的序列是", pos);
+	printf("在第%d个位置插入%d后的序列是", pos,x);
 	SeqListPrint(ps);
 
 }
