@@ -81,7 +81,15 @@ void SeqListPushFront(struct  SeqList* ps, SLDataType x)
 	ps->size++;
 }
 
-void SeqListPopFront(struct  SeqList* ps) {};
+//头删
+void SeqListPopFront(struct  SeqList* ps)
+{
+	for (int  i = 1; i <ps->size; i++)
+	{
+		ps->a[i - 1] = ps->a[i];
+	}
+	ps->size--;
+}
 
 //任意位置的插入删除   position 位置
 void SeqListInsert(struct  SeqList* ps, int pos) {};
