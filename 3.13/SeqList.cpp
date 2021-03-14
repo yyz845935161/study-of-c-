@@ -136,4 +136,6 @@ void SeqListErase(struct  SeqList* ps, int pos)
 		ps->a[i] = ps->a[i + 1];
 	}
 	ps->size++;
+	printf("在第%d个位置删除后的序列是", pos);
+	SeqListPrint(ps);
 };
