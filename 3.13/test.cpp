@@ -23,7 +23,6 @@ void testHeadpush()
 	SeqListInit(&s);
 	SeqListPushFront(&s, 100);
 	SeqListPushFront(&s, 1);
-	SeqListPrint(&s);
 }
 
 void testHeadPop()
@@ -33,18 +32,24 @@ void testHeadPop()
 	SeqListPushBack(&s, 1);
 	SeqListPushBack(&s, 2);
 	SeqListPushBack(&s, 8);
-	SeqListPrint(&s);
 	SeqListPopFront(&s);
 
-	SeqListPrint(&s);
 
 	SeqListPushFront(&s, 100);
 	SeqListPushFront(&s, 11);
 	SeqListPushFront(&s, 3);
-	SeqListPrint(&s);
 	SeqListPopFront(&s); 
-	SeqListPopFront(&s);
-	SeqListPrint(&s);
+	SeqListPushFront(&s, 66);
+
+	SeqListInsert(&s,1,2);
+	SeqListInsert(&s, 1,3);
+	SeqListInsert(&s, 1,4);
+	SeqListErase(&s, 1);
+	SeqListErase(&s, 3);
+
+	
+
+	
 
 
 	
@@ -52,8 +57,8 @@ void testHeadPop()
 int main()
 {
 	testHeadPop();
-	testSL();
-	testHeadpush();
+	//testSL();
+	//testHeadpush();
 
 	return 0;
 }
