@@ -46,6 +46,7 @@ void testHeadPop()
 	SeqListInsert(&s, 1,4);
 	SeqListErase(&s, 1);
 	SeqListErase(&s, 3);
+	SeqListInsert(&s, 1, 25);
 
 	
 
