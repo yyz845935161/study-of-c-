@@ -126,4 +126,14 @@ void SeqListInsert(struct  SeqList* ps, int pos, SLDataType x)
 	SeqListPrint(ps);
 
 }
-void SeqListErase(struct  SeqList* ps, int pos) {};
+
+//»Œ“‚Œª÷√…æ≥˝
+void SeqListErase(struct  SeqList* ps, int pos) 
+{
+	assert(ps);
+	for (int i = pos; i < ps->size-i; i++)
+	{
+		ps->a[i] = ps->a[i + 1];
+	}
+	ps->size++;
+};
