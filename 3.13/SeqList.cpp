@@ -121,7 +121,7 @@ void SeqListInsert(struct  SeqList* ps, int pos, SLDataType x)
 		ps->a[i] = ps->a[i-1];
 	}
 	ps->a[pos] = x;
-	ps->size++;
+	ps->size--;
 	printf("在第%d个位置插入%d后的序列是", pos,x);
 	SeqListPrint(ps);
 
@@ -135,7 +135,7 @@ void SeqListErase(struct  SeqList* ps, int pos)
 	{
 		ps->a[i] = ps->a[i + 1];
 	}
-	ps->size++;
+	ps->size--;
 	printf("在第%d个位置删除后的序列是", pos);
 	SeqListPrint(ps);
 };
