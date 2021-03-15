@@ -21,15 +21,21 @@ public:
 
 	//记录职工人数
 	int m_EmpNum;
-
 	//职工数组指针
 	Worker** m_EmpArr;
+	//判断文件是否为空
+	bool m_FileIsEmpty;
 
 	//添加职工
 	void add_Emp();
 
 	//保存文件
 	void save();
+
+	//统计职工人数
+	int get_EmpNum();
+
+	
 
 	~WorkerManager();
 };

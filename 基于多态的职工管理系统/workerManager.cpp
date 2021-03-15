@@ -2,13 +2,49 @@
 
 #include "workerManager.h"
 
+//构造函数
 WorkerManager::WorkerManager()
 {
-	//初始化成员
-	this->m_EmpNum = 0;
-	this->m_EmpArr= NULL;
+	//1、文件不存在
+	ifstream ifs;
+	ifs.open(RILENAME, ios::in);//读文件
+
+
+	//文件不存在的情况
+	if (!ifs.is_open())
+	{
+		cout << "文件不存在" << endl;
+		//初始化属性
+		//初始化人数
+		//初始化成员
+		this->m_EmpNum = 0;
+		this->m_EmpArr = NULL;
+		this->m_FileIsEmpty = true;
+		ifs.close();
+		return;
+	}
+
+	//文件存在但内容为空的情况
+	char ch;
+	ifs >> ch;
+	if (ifs.eof())//判断是否读到了文件尾
+	{
+		cout << "文件为空" << endl;
+		this->m_EmpNum = 0;
+		this->m_EmpArr = NULL;
+		this->m_FileIsEmpty = true;
+		ifs.close();
+		return;
+	}
+
+
+	//3.文件存在，并且记录了数据
+	int num = this->get_EmpNum();
+	cout << "职工人数为：" << num << endl;
+	this->m_EmpNum = num;
 }
 
+//菜单
 void WorkerManager::Show_Menu()
 {
 	cout << "********************************************" << endl;
@@ -25,6 +61,8 @@ void WorkerManager::Show_Menu()
 	cout << endl;
 }
 
+
+//退出
 void WorkerManager::ExitSystem()
 {
 	cout << "欢迎下次使用" << endl;
@@ -101,6 +139,9 @@ void WorkerManager::add_Emp()
 		//更改人数
 		this->m_EmpNum += addNum;
 
+		//文件置为非空
+		this->m_FileIsEmpty = false;
+
 		//提示添加成功
 		cout << "添加成功" << addNum << "名新员工" << endl;
 
@@ -118,6 +159,24 @@ void WorkerManager::add_Emp()
 	system("cls");
 }
 
+//统计职工人数
+int WorkerManager::get_EmpNum()
+{
+	ifstream ifs;
+	ifs.open(RILENAME, ios::in);//读文件 
+	int id;
+	string name;
+	int did;
+	int num = 0;
+
+	while (ifs >> id && ifs >> name && ifs >> did)
+	{
+		num++;
+	}
+	return num;
+};
+
+
 //保存文件
 void WorkerManager::save()
 {
@@ -126,8 +185,8 @@ void WorkerManager::save()
 
 	for (int  i = 0; i < this->m_EmpNum; i++)
 	{
-		pf << this->m_EmpArr[i]->m_Id << ""
-			<< this->m_EmpArr[i]->m_Name << ""
+		pf << this->m_EmpArr[i]->m_Id << " "
+			<< this->m_EmpArr[i]->m_Name << " "
 			<< this->m_EmpArr[i]->m_DepartmentId <<endl;
 	}
 
