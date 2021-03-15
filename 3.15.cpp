@@ -115,6 +115,8 @@ myCompare_Per(T& p1, T& p2)
 		return false;
 	}
 }
+
+
 void test02()
 {
 	Person p1("ÕÅÈı", 1);
@@ -136,6 +138,6 @@ void test02()
 int main()
 {
 	/*test01();*/
-	test02();
+	//test02();
 	return 0;
 }
