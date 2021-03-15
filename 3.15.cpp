@@ -143,24 +143,96 @@ void test02()
 //}
 
 
+//class Solution {
+//public:
+//	int jumpFloorII(int number)
+//	{
+//
+//		int* p = (int*)malloc(sizeof(int) * number);
+//		p[0] = 1;
+//		p[1] = 2;
+//		for (int i = 2; i < number; i++)
+//		{
+//			p[i] = 0;
+//			for (int j = 0; j < i; j++)
+//			{
+//				p[i] += p[j];
+//			}
+//			p[i]++;
+//		}
+//		return p[number - 1];
+//
+//	}
+//};
+//
+//
+//class Solution {
+//public:
+//	int rectCover(int number)
+//	{
+//		if (number < 1) return 0;
+//		int x = 1;
+//		int y = 2;
+//		while (--number)
+//		{
+//			y = y + x;
+//			x = y - x;
+//		}
+//		return x;
+//	}
+//};
+
+//class Solution {
+//public:
+//	int  NumberOf1(int n)
+//	{
+//		int sum = 0;
+//		if (n < 0)
+//		{
+//			n = -n;
+//			n =
+//				sum++;
+//		}
+//
+//		while (n)
+//		{
+//			if (n % 2 == 1)sum++;
+//			n /= 2;
+//		}
+//		return sum;
+//	}
+//};
+
+int main()
+{
+	int n = -1;
+	int x = -100;
+	int y = 15;
+	n = ~n;
+	x = ~x;
+	y = ~y;
+	return 0;
+}
+
 class Solution {
 public:
-	int jumpFloorII(int number)
+	int  NumberOf1(int n)
 	{
-
-		int* p = (int*)malloc(sizeof(int) * number);
-		p[0] = 1;
-		p[1] = 2;
-		for (int i = 2; i < number; i++)
+		int sum = 0;
+		int temp = n;
+		while (n)
 		{
-			p[i] = 0;
-			for (int j = 0; j < i; j++)
+			if (n < 0)
 			{
-				p[i] += p[j];
+				n = ~n;
 			}
-			p[i]++;
+			if (n % 2 == 1)sum++;
+			n /= 2;
 		}
-		return p[number - 1];
-
+		if (temp < 0)
+		{
+			return 32 - sum;
+		}
+		return sum;
 	}
 };
