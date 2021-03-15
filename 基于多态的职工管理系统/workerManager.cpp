@@ -237,13 +237,21 @@ void WorkerManager::save()
 //显示员工
 void WorkerManager::print_Emp()
 {
-	for (int i = 0; i < this->m_EmpNum; i++)
+	if (this->m_FileIsEmpty)
 	{
-		cout << "员工编号" << this->m_EmpArr[i]->m_Id
-			<< "员工姓名" << this->m_EmpArr[i]->m_Name
-			<< "员工职位" << this->m_EmpArr[i]->m_DepartmentId 
-			<< endl<<endl;
+		cout << "文件不存在或记录为空！" << endl;
 	}
+	else
+	{
+		for (int  i = 0; i < this->m_EmpNum; i++)
+		{
+			this->m_EmpArr[i]->showInforma();
+		}
+	}
+	
+	//按任意键清屏
+	system("pause");
+	system("cls");
 };
 
 WorkerManager::~WorkerManager()
