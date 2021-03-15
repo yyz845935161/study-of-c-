@@ -42,7 +42,47 @@ WorkerManager::WorkerManager()
 	int num = this->get_EmpNum();
 	cout << "职工人数为：" << num << endl;
 	this->m_EmpNum = num;
+
+	// 先开辟空间，将文件中的数据存入数组中
+	this->m_EmpArr = new Worker*[num];
+	this->init_Emp();
+	cout << "文件导入成功！" << endl;
+
 }
+
+//初始化员工
+void WorkerManager::init_Emp()
+{
+	ifstream ifs;
+	ifs.open(RILENAME, ios::in);
+
+	int id;
+	string name;
+	int did;
+
+	int i = 0;
+	while (ifs >> id && ifs >> name && ifs >> did)
+	{
+		Worker* worker = NULL;
+
+		if (did == 1)
+		{
+			worker = new Employee(id, name ,did);
+		}
+		else if(did==2)
+		{
+			worker = new Manager(id, name, did);
+		}
+		else
+		{
+			worker = new Boss(id, name, did);
+		}
+		this->m_EmpArr[i] = worker;
+		i++;
+	}
+	ifs.close();
+
+};
 
 //菜单
 void WorkerManager::Show_Menu()
@@ -192,6 +232,18 @@ void WorkerManager::save()
 
 	//关闭文件
 	pf.close();
+};
+
+//显示员工
+void WorkerManager::print_Emp()
+{
+	for (int i = 0; i < this->m_EmpNum; i++)
+	{
+		cout << "员工编号" << this->m_EmpArr[i]->m_Id
+			<< "员工姓名" << this->m_EmpArr[i]->m_Name
+			<< "员工职位" << this->m_EmpArr[i]->m_DepartmentId 
+			<< endl<<endl;
+	}
 };
 
 WorkerManager::~WorkerManager()

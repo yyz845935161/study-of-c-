@@ -34,6 +34,10 @@ public:
 
 	//统计职工人数
 	int get_EmpNum();
+	//初始化员工
+	void init_Emp();
+
+	void print_Emp();
 
 	
 
