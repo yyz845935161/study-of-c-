@@ -1,0 +1,2 @@
+G:\C_Code\c++\3.16\Debug\3.16.exe
+G:\C_Code\c++\3.16\Debug\3.16.pdb
