@@ -47,7 +47,7 @@ int main()
     int right = numsSize - 1;
     int left = 0;
     int newSize = numsSize;
-    for (int i = 0; i < numsSize - 1; i++)
+    while(left<right)
     {
         if (nums[left] != val)
         {
@@ -64,7 +64,37 @@ int main()
         int temp = nums[left];
         nums[left] = nums[right];
         nums[right] = temp;
+        right--;
         newSize--;
 
     }
+}
+
+int removeElement(int* nums, int numsSize, int val) {
+    int right = numsSize - 1;
+    int left = 0;
+    int newSize = numsSize;
+    while (left <= right)
+    {
+        if (nums[left] != val)
+        {
+            left++;
+            continue;
+        }
+        if (nums[right] == val)
+        {
+            right--;
+            newSize--;
+            continue;
+        }
+
+        int temp = nums[left];
+        nums[left] = nums[right];
+        nums[right] = temp;
+        right--;
+        newSize--;
+
+    }
+    return newSize;
+
 }
