@@ -1,12 +1,70 @@
-#include"Person.h"
+//#include"Person.h"
+//
+//Person::Person(int age, string name)
+//{
+//	this->name = name;
+//	this->age = age;
+//}
+//
+//void Person::show()
+//{
+//	cout << "姓名" << this->name << "\t年龄" << this->age << endl;
+//}
 
-Person::Person(int age, string name)
-{
-	this->name = name;
-	this->age = age;
-}
+//int removeElement(int* nums, int numsSize, int val) {
+//    int right = numsSize;
+//    int left = 0;
+//    for (int i = 0; i < numsSize; i++)
+//    {
+//        if (nums[left] != val)
+//        {
+//            left++;
+//            continue;
+//        }
+//        if (nums[right] == val)
+//        {
+//            right--;
+//            continue;
+//        }
+//
+//        int temp = nums[left];
+//        nums[left] = nums[right];
+//        nums[right] = temp;
+//        numsSize--;
+//
+//    }
+//
+//    return numsSize;
+//
+//
+//}
 
-void Person::show()
+int main()
 {
-	cout << "姓名" << this->name << "\t年龄" << this->age << endl;
+    int nums[8] = { 0,1,2,2,3,0,4,2 };
+    int numsSize = 8;
+    int val = 2;
+    int right = numsSize - 1;
+    int left = 0;
+    int newSize = numsSize;
+    for (int i = 0; i < numsSize - 1; i++)
+    {
+        if (nums[left] != val)
+        {
+            left++;
+            continue;
+        }
+        if (nums[right] == val)
+        {
+            right--;
+            newSize--;
+            continue;
+        }
+
+        int temp = nums[left];
+        nums[left] = nums[right];
+        nums[right] = temp;
+        newSize--;
+
+    }
 }
