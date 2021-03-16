@@ -17,7 +17,7 @@ public:
 	//构造函数
 	MyArray(int n)
 	{
-		cout << "调用了有参构造" << endl;
+		//cout << "调用了有参构造" << endl;
 		this->m_capacity = n;
 		this->m_size = 0;
 		this->pAddress = new T[this->m_capacity];
@@ -26,7 +26,7 @@ public:
 	//拷贝函数
 	MyArray(const MyArray& arr)
 	{
-		cout << "调用了拷贝构造" << endl;
+		//cout << "调用了拷贝构造" << endl;
 		this->m_capacity = arr.m_capacity;
 		this->m_size = arr.m_size;
 
@@ -45,7 +45,7 @@ public:
 	//返回自身引用是为了连等
 	MyArray& operator = (const MyArray & arr)
 	{
-		cout << "调用operator=构造" << endl;
+		//cout << "调用operator=构造" << endl;
 		if (this->pAddress!=NULL)
 		{
 			delete[] this->pAddress;
@@ -72,7 +72,7 @@ public:
 	//析构函数
 	~MyArray()
 	{
-		cout << "析构调用" << endl;
+		//cout << "析构调用" << endl;
 		if (this->pAddress!=NULL)
 		{
 			delete[] this->pAddress;
@@ -80,8 +80,15 @@ public:
 		}
 	}
 
-	
+	int get_size()
+	{
+		return this->m_size;
+	}
 
+	int get_capacity()
+	{
+		return this->m_capacity;
+	}
 	
 
 	
