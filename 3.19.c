@@ -1,8 +1,8 @@
-
+#define _CRT_SECURE_NO_WARNINGS 1
 #include <stdio.h>
 #include <errno.h>
 #include <string.h>
-#define _CRT_SECURE_NO_WARNINGS 1
+
 
 #include "game.h"
 
