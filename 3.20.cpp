@@ -51,3 +51,37 @@ int main()
     removeDuplicates(arr, 10);
     return 0;
 }
+
+
+void merge(int* nums1, int nums1Size, int m, int* nums2, int nums2Size, int n)
+{
+    int n1 = 0;
+    int n2 = 0;
+    for (int i = 0; i < m + n; i++)
+    {
+        if (n2 == n)break;
+        if (n1 == m)
+        {
+            for (int j = nums1Size; j < m + n; j++)
+            {
+                nums1[j] = nums2[n2++];
+                nums1Size++;
+            }
+            break;
+        }
+
+        if (nums1[n1] > nums2[n2])
+        {
+            for (int j = nums1Size - 1; j > n1; n--)
+            {
+                nums1[j] = nums1[j - 1];
+            }
+            nums1[n1] = nums2[n2];
+            nums1Size++;
+            n2++;
+        }
+        n1++;
+    }
+}
+
+
