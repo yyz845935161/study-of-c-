@@ -100,9 +100,24 @@ struct ListNode* reverseList(struct ListNode* head) {
 
 }
 
-struct ListNode* reverseList(struct ListNode* head) 
-{
 
+struct ListNode* reverseList(struct ListNode* head)
+{
+    if (head == NULL || head->next == NULL) return head;
+    //struct ListNode* newhead = (struct ListNode*)malloc(sizeof(struct ListNode));
+    struct ListNode* newhead = head;
+    head = head->next;
+    newhead->next = NULL;
+
+    while (head)
+    {
+        struct ListNode* temp = head->next;
+        head->next = newhead;
+        newhead = head;
+        head = temp;
+
+    }
+    return newhead;
 
 }
 
