@@ -68,3 +68,32 @@ struct ListNode* removeElements(struct ListNode* head, int val) {
 
     return phead->next;
 }
+
+
+struct ListNode* reverseList(struct ListNode* head) {
+    if (head == NULL || head->next == NULL) return head;
+    if (head->next->next == NULL)
+    {
+        struct ListNode* p = head->next;
+        head->next->next = head;
+        head->next = NULL;
+        return p;
+    }
+
+    struct ListNode* n1 = head;
+    struct ListNode* n2 = head->next;
+    struct ListNode* n3 = n2->next;
+    n1->next = NULL;
+    while (n2)
+    {
+        n2->next = n1;
+        n1 = n2;
+        n2 = n3;
+        if (n3)
+        {
+            n3 = n3->next;
+        }
+    }
+    return n1;
+
+}
