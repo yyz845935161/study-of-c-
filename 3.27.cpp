@@ -100,6 +100,11 @@ struct ListNode* reverseList(struct ListNode* head) {
 
 }
 
+struct ListNode* reverseList(struct ListNode* head) 
+{
+
+
+}
 
 int main()
 {
