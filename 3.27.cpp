@@ -97,4 +97,11 @@ struct ListNode* reverseList(struct ListNode* head) {
     return n1;
 
 
+
+}
+
+
+int main()
+{
+
 }
