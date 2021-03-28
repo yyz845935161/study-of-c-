@@ -142,3 +142,49 @@ struct ListNode* FindKthToTail(struct ListNode* pListHead, int k) {
 	}
 	return slow;
 }
+
+struct ListNode* mergeTwoLists(struct ListNode* l1, struct ListNode* l2) {
+	if (!l1)return l2;
+	if (!l2)return l1;
+
+	struct ListNode* newhead = NULL;
+	struct ListNode* tail = NULL;
+	if (l1->val > l2->val)
+	{
+		newhead = l2;
+	}
+	else
+	{
+		newhead = l1;
+	}
+
+	while (l1 && l2)
+	{
+		struct ListNode* temp = tail;
+		if (l1->val > l2->val)
+		{
+			tail = l2;
+			l2 = l2->next;
+			if (temp)  temp->next = tail;
+			tail->next = NULL;
+		}
+		else
+		{
+			tail = l1;
+			l1 = l1->next;
+			if (temp)  temp->next = tail;
+			tail->next = NULL;
+		}
+	}
+
+	if (!l1)
+	{
+		tail->next = l2;
+	}
+	else
+	{
+		tail->next = l1;
+	}
+	return newhead;
+}
+
