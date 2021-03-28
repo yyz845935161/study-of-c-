@@ -198,5 +198,9 @@ struct ListNode* mergeTwoLists(struct ListNode* l1, struct ListNode* l2) {
 
 
 
+void test02()
+{
+
+}
 
 
