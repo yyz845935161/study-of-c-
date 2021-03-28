@@ -117,3 +117,28 @@ struct ListNode* middleNode(struct ListNode* head) {
 	return slow;
 
 }
+
+struct ListNode* FindKthToTail(struct ListNode* pListHead, int k) {
+	// write code here
+	struct ListNode* fast = pListHead;
+	struct ListNode* slow = pListHead;
+	while (k)
+	{
+		k--;
+		if (fast)
+		{
+			fast = fast->next;
+		}
+		else
+		{
+			return NULL;
+		}
+	}
+
+	while (fast)
+	{
+		fast = fast->next;
+		slow = slow->next;
+	}
+	return slow;
+}
