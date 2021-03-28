@@ -90,12 +90,18 @@ void test02()
 	createPerson(v);
 	cout << "test02ÐÕÃû" << v.begin()->name<<(*v.begin()).name;
 }
-int main()
+//int main()
+//{
+//	srand((unsigned int)time(NULL));
+//	//test01();
+//	test02();
+//}
+
+struct ListNode
 {
-	srand((unsigned int)time(NULL));
-	//test01();
-	test02();
-}
+	int val;
+	struct ListNode* next;
+};
 
 struct ListNode* middleNode(struct ListNode* head) {
 	struct ListNode* fast = head->next;
