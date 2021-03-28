@@ -84,8 +84,36 @@ void test01()
 	printPerson(v);
 }
 
+void test02()
+{
+	vector<Person> v;
+	createPerson(v);
+	cout << "test02ÐÕÃû" << v.begin()->name<<(*v.begin()).name;
+}
 int main()
 {
 	srand((unsigned int)time(NULL));
-	test01();
+	//test01();
+	test02();
+}
+
+struct ListNode* middleNode(struct ListNode* head) {
+	struct ListNode* fast = head->next;
+	struct ListNode* slow = head;
+
+	while (fast)
+	{
+		slow = slow->next;
+		if (fast->next)
+		{
+			fast = fast->next->next;
+		}
+		else
+		{
+			fast = fast->next;
+		}
+	}
+
+	return slow;
+
 }
