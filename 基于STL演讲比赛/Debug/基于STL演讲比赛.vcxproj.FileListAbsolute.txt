@@ -1,0 +1,2 @@
+G:\C_Code\c++\基于STL演讲比赛\Debug\基于STL演讲比赛.exe
+G:\C_Code\c++\基于STL演讲比赛\Debug\基于STL演讲比赛.pdb
