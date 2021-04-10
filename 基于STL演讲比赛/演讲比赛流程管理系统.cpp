@@ -6,7 +6,7 @@ void test_12_speaker()
 	for (map<int,Speaker>::iterator it = temp.m_Speaker.begin();it!= temp.m_Speaker.end(); it++)
 	{
 		cout << "选手编号：" << it->first << "  选手姓名:" <<
-			it->second.m_string << "   选手得分1：" <<
+			it->second.m_name << "   选手得分1：" <<
 			it->second.m_score[0] << "   选手得分2:" <<
 			it->second.m_score[1] << endl;
 	}
@@ -14,6 +14,7 @@ void test_12_speaker()
 
 int main()
 {
+	srand((unsigned int)time(NULL));
 	//test_12_speaker();
 	SpeechManager sm;
 	
@@ -36,8 +37,10 @@ int main()
 				sm.startSpeech();
 				break;
 			case 2://查看往届比赛
+				sm.showRecord();
 				break;
 			case 3://清空比赛记录
+				sm.clearRecord();
 				break;
 			default:
 				system("cls");//清屏

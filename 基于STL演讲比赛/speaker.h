@@ -6,6 +6,6 @@ using namespace std;
 class Speaker
 {
 public:
-	string m_string;
+	string m_name;
 	double m_score[2];//分数最多两轮
 };
